@@ -1,0 +1,5 @@
+.DS_Store
+**/.DS_Store
+
+research/tools/ortools_examples/build/*
+research/tools/ortools_examples/examples
