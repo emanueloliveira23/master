@@ -1,28 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-- Take a input file which contains a json object per line.
-- Each json object contains data about an PoI.
-- Extract the distance between all PoIs.
-- The distance metric used is conditional:
-    - If two PoIs are in the same avenue/street (if this info is available), use haversine distance.
-    - If two PoIs aren't in the same avenue/street, use Manhattan Distance for two geolocations.
-- The return is a big dictionary following the above pattern:
-
-    {
-        poi1_Id: {
-            poi2_Id: distance,
-            poi3_Id: distance,
-            ...
-        },
-        poi2_Id: {
-            poi1_Id: distance,
-            poi3_Id: distance,
-            ...
-        }
-        ...
-    }
-
-"""
 
 import sys
 import json
@@ -114,13 +90,31 @@ def distance(pi, pj):
     return d
 
 
-def get_distance_dictionary(file_dataset):
+def extract_from_list(pois):
+    """
+    - Take an array of PoIs.
+    - Each json object contains data about an PoI.
+    - Extract the distance between all PoIs.
+    - The distance metric used is conditional:
+        - If two PoIs are in the same avenue/street (if this info is available), use haversine distance.
+        - If two PoIs aren't in the same avenue/street, use Manhattan Distance for two geolocations.
 
-    # Extract all pois and put into array
-    pois = []
-    with open(file_dataset, encoding='utf-8') as fd:
-        for line in fd:
-            pois.append(json.loads(line))
+    :param pois: An array of PoIs
+    :return: a big dictionary following the above pattern:
+        {
+            poi1_Id: {
+                poi2_Id: distance,
+                poi3_Id: distance,
+                ...
+            },
+            poi2_Id: {
+                poi1_Id: distance,
+                poi3_Id: distance,
+                ...
+            }
+            ...
+        }
+    """
 
     # Make dictionary distance
     distance_dictionary = {}
@@ -131,20 +125,39 @@ def get_distance_dictionary(file_dataset):
                 pi_dict[oid(pj)] = distance(pi, pj)
         distance_dictionary[oid(pi)] = pi_dict
 
-    data = {
-        pois: pois,
-        distance_dictionary: distance_dictionary
-    }
-
-    return data
+    return distance_dictionary
 
 
-def main(argv):
-    file_dataset = argv[1]
-    distance_dictionary = get_distance_dictionary(file_dataset)
-    print(distance_dictionary)
+def extract_from_file(pois_file):
+    """
+    - Each json object contains data about an PoI.
+    - Extract the distance between all PoIs.
+    - The distance metric used is conditional:
+        - If two PoIs are in the same avenue/street (if this info is available), use haversine distance.
+        - If two PoIs aren't in the same avenue/street, use Manhattan Distance for two geolocations.
 
+    :param pois_file: File which contains a json object per line.
+    :return: a big dictionary following the above pattern:
+        {
+            poi1_Id: {
+                poi2_Id: distance,
+                poi3_Id: distance,
+                ...
+            },
+            poi2_Id: {
+                poi1_Id: distance,
+                poi3_Id: distance,
+                ...
+            }
+            ...
+        }
 
-if __name__ == '__main__':
-    main(sys.argv)
+    """
 
+    # Extract all pois and put into array
+    pois = []
+    with open(pois_file, encoding='utf-8') as fd:
+        for line in fd:
+            pois.append(json.loads(line))
+
+    return extract_from_list(pois)
