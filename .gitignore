@@ -1,5 +1,7 @@
 .DS_Store
 **/.DS_Store
 
+*.idea*
+
 research/tools/ortools_examples/build/*
 research/tools/ortools_examples/examples
