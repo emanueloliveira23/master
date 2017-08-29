@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 
 # P/ VRP:
 # - Não há restrição de capacidade
@@ -5,124 +6,108 @@
 
 from ortools.constraint_solver import pywrapcp
 from ortools.constraint_solver import routing_enums_pb2
-from vrptur_pois_data_extractor import get_distance_dictionary
+from vrptur_pois_data_extractor import *
 
 
-def distance(x1, y1, x2, y2):
-    # Manhattan distance
-    dist = abs(x1 - x2) + abs(y1 - y2)
+class CreateMeasurementCallback(object):
+    """Create callback to calculate distances and duration between points."""
 
-    return dist
-
-
-class CreateDistanceCallback(object):
-    """Create callback to calculate distances between points."""
-
-    def __init__(self, locations):
-        """Initialize distance array."""
-        size = len(locations)
+    def __init__(self, pois, measurement):
+        """Initialize measurement dictionary."""
+        size = len(pois)
         self.matrix = {}
 
-        for from_node in xrange(size):
+        for from_node in range(size):
             self.matrix[from_node] = {}
-            for to_node in xrange(size):
-                x1 = locations[from_node][0]
-                y1 = locations[from_node][1]
-                x2 = locations[to_node][0]
-                y2 = locations[to_node][1]
-                self.matrix[from_node][to_node] = distance(x1, y1, x2, y2)
+            from_id = oid(pois[from_node])
+            for to_node in range(size):
+                to_id = oid(pois[to_node])
+                self.matrix[from_node][to_node] = measurement[from_id][to_id]
 
     def distance(self, from_node, to_node):
-        return self.matrix[from_node][to_node]
+        return self.matrix[from_node][to_node][0]
 
-
-# Demand callback
-class CreateDemandCallback(object):
-    """Create callback to get demands at each location."""
-
-    def __init__(self, demands):
-        self.matrix = demands
-
-    def demand(self, from_node, to_node):
-        return self.matrix[from_node]
+    def duration(self, from_node, to_node):
+        return self.matrix[from_node][to_node][1]
 
 
 def main():
     # Create the data.
-    data = create_data_array()
-    locations = data[0]
-    demands = data[1]
-    num_locations = len(locations)
+    pois, measurement = create_data_array()
+    num_pois = len(pois)
     depot = 0  # The depot is the start and end point of each route.
-    num_vehicles = 5
+    num_days = 7
 
     # Create routing model.
-    if num_locations > 0:
-        routing = pywrapcp.RoutingModel(num_locations, num_vehicles, depot)
+    if num_pois > 0:
+        routing = pywrapcp.RoutingModel(num_pois, num_days, depot)
         search_parameters = pywrapcp.RoutingModel.DefaultSearchParameters()
 
         # Setting first solution heuristic: the
         # method for finding a first solution to the problem.
         search_parameters.first_solution_strategy = (
             routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC)
+        # search_parameters.first_solution_strategy = (
+        #     routing_enums_pb2.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH)
 
         # The 'PATH_CHEAPEST_ARC' method does the following:
         # Starting from a route "start" node, connect it to the node which produces the
         # cheapest route segment, then extend the route by iterating on the last
         # node added to the route.
 
-        # Put a callback to the distance function here. The callback takes two
-        # arguments (the from and to node indices) and returns the distance between
+        # Put a callback to the measurement function here. The callback takes two
+        # arguments (the from and to node indices) and returns the duration between
         # these nodes.
 
-        dist_between_locations = CreateDistanceCallback(locations)
-        dist_callback = dist_between_locations.distance
-        routing.SetArcCostEvaluatorOfAllVehicles(dist_callback)
+        measurement_between_pois = CreateMeasurementCallback(pois, measurement)
+        duration_callback = measurement_between_pois.duration
+        routing.SetArcCostEvaluatorOfAllVehicles(duration_callback)
 
-        # Put a callback to the demands.
-        demands_at_locations = CreateDemandCallback(demands)
-        demands_callback = demands_at_locations.demand
-
-        # Add a dimension for demand.
-        slack_max = 0
-        vehicle_capacity = 100
+        # Add a dimension for duration.
+        max_day_duration = 120  # minutes in transit
         fix_start_cumul_to_zero = True
-        demand = "Demand"
-        routing.AddDimension(demands_callback, slack_max, vehicle_capacity,
-                             fix_start_cumul_to_zero, demand)
+        duration = "Duration"
+        routing.AddDimension(
+            duration_callback,
+            max_day_duration,
+            max_day_duration,
+            fix_start_cumul_to_zero,
+            duration
+        )
 
         # Solve, displays a solution if any.
         assignment = routing.SolveWithParameters(search_parameters)
         if assignment:
             # Display solution.
             # Solution cost.
-            print("Total distance of all routes: " + str(assignment.ObjectiveValue()) + "\n")
+            print("Total duration of all routes: " + str(assignment.ObjectiveValue()) + "\n")
 
-            for vehicle_nbr in range(num_vehicles):
+            for vehicle_nbr in range(num_days):
                 index = routing.Start(vehicle_nbr)
                 index_next = assignment.Value(routing.NextVar(index))
+
                 route = ''
-                route_dist = 0
-                route_demand = 0
+                route_duration = 0
 
                 while not routing.IsEnd(index_next):
                     node_index = routing.IndexToNode(index)
                     node_index_next = routing.IndexToNode(index_next)
-                    route += str(node_index) + " -> "
-                    # Add the distance to the next node.
-                    route_dist += dist_callback(node_index, node_index_next)
-                    # Add demand.
-                    route_demand += demands[node_index_next]
+
+                    route += pois[node_index]["label"] + " -> "
+                    route_duration += duration_callback(node_index, node_index_next)
+
                     index = index_next
                     index_next = assignment.Value(routing.NextVar(index))
 
                 node_index = routing.IndexToNode(index)
                 node_index_next = routing.IndexToNode(index_next)
-                route += str(node_index) + " -> " + str(node_index_next)
-                route_dist += dist_callback(node_index, node_index_next)
+
+                route += pois[node_index]["label"] + " -> " + pois[node_index_next]["label"]
+                route_duration += duration_callback(node_index, node_index_next)
+
                 print("Route for vehicle " + str(vehicle_nbr) + ":\n\n" + route + "\n")
-                print("Distance of route " + str(vehicle_nbr) + ": " + str(route_dist))
-                print("Demand met by vehicle " + str(vehicle_nbr) + ": " + str(route_demand) + "\n")
+                print("Duration of route " + str(vehicle_nbr) + ": " + str(route_duration))
+
         else:
             print('No solution found.')
     else:
@@ -130,15 +115,32 @@ def main():
 
 
 def create_data_array():
-    locations = [[82, 76], [96, 44], [50, 5], [49, 8], [13, 7], [29, 89], [58, 30], [84, 39],
-                 [14, 24], [12, 39], [3, 82], [5, 10], [98, 52], [84, 25], [61, 59], [1, 65],
-                 [88, 51], [91, 2], [19, 32], [93, 3], [50, 93], [98, 14], [5, 42], [42, 9],
-                 [61, 62], [9, 97], [80, 55], [57, 69], [23, 15], [20, 70], [85, 60], [98, 5]]
+    pois, measurement = extract_from_file("../../data/pois-postcard.json")
+    hotel_id = "hotel"
 
-    demands = [0, 19, 21, 6, 19, 7, 12, 16, 6, 16, 8, 14, 21, 16, 3, 22, 18,
-               19, 1, 24, 8, 12, 4, 8, 24, 24, 2, 20, 15, 2, 14, 9]
-    data = [locations, demands]
-    return data
+    # Making depot/hotel like a PoI
+    hotel = make_skinny_poi(
+        _id=hotel_id,
+        name="Praia Centro Hotel",
+        address="Av. Monsenhor Tabosa, 740 - Praia de Iracema, Fortaleza - CE, 60165-010",
+        lat=-3.7241911,
+        lng=-38.5146956
+    )
+
+    # Update all pois to include hotel measure
+    hotel_dict = {}
+    hotel_dict[hotel_id] = [0, 0]
+    for poi in pois:
+        pid = oid(poi)
+        m = measure(poi, hotel)
+        measurement[pid][hotel_id] = m
+        hotel_dict[pid] = m
+
+    # Update pois array and measurement dictionary to include hotel
+    pois.insert(0, hotel)
+    measurement[hotel_id] = hotel_dict
+
+    return [pois, measurement]
 
 
 if __name__ == '__main__':
