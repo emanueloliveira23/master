@@ -36,7 +36,7 @@ def main():
     pois, measurement = create_data_array()
     num_pois = len(pois)
     depot = 0  # The depot is the start and end point of each route.
-    num_days = 7
+    num_days = 2
 
     # Create routing model.
     if num_pois > 0:
@@ -115,7 +115,7 @@ def main():
 
 
 def create_data_array():
-    pois, measurement = extract_from_file("../../data/pois-postcard.json")
+    pois, measurement = extract_from_file("../../data/5967c27e8500002b1af50675-test.json")
     hotel_id = "hotel"
 
     # Making depot/hotel like a PoI
