@@ -47,6 +47,7 @@ def main():
         # method for finding a first solution to the problem.
         search_parameters.first_solution_strategy = (
             routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC)
+
         # search_parameters.first_solution_strategy = (
         #     routing_enums_pb2.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH)
 
@@ -64,7 +65,7 @@ def main():
         routing.SetArcCostEvaluatorOfAllVehicles(duration_callback)
 
         # Add a dimension for duration.
-        max_day_duration = 120  # minutes in transit
+        max_day_duration = 480  # in minutes
         fix_start_cumul_to_zero = True
         duration = "Duration"
         routing.AddDimension(
@@ -115,7 +116,9 @@ def main():
 
 
 def create_data_array():
+
     pois, measurement = extract_from_file("../../data/5967c27e8500002b1af50675-test.json")
+
     hotel_id = "hotel"
 
     # Making depot/hotel like a PoI
@@ -128,7 +131,7 @@ def create_data_array():
     )
 
     # Update all pois to include hotel measure
-    hotel_dict = {}
+    hotel_dict = dict()
     hotel_dict[hotel_id] = [0, 0]
     for poi in pois:
         pid = oid(poi)

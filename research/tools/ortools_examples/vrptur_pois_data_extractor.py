@@ -20,6 +20,9 @@ MAX_WALK_DISTANCE = 2  # Kilometers
 MAX_URBAN_DISTANCE = 20  # Kilometers. Use to switch between highway or urban speed.
 MINUTES_PER_HOUR = 60
 
+DEFAULT_VISITING_TIME = 30  # in minutes
+
+
 def oid(pi):
     return pi["_id"]["$oid"]
 
@@ -140,7 +143,13 @@ def duration(pi, pj, mode="auto", auto_threshold=MAX_WALK_DISTANCE, max_urban_th
             mode = "walk"
 
     speed = TRANSPORT_MODES[mode]
-    return (dist / speed) * MINUTES_PER_HOUR
+
+    pi_visiting_time = pi.get("visitingTime", DEFAULT_VISITING_TIME)
+    pj_visiting_time = pj.get("visitingTime", DEFAULT_VISITING_TIME)
+
+    travel_time = (dist / speed) * MINUTES_PER_HOUR
+
+    return travel_time + pi_visiting_time / 2 + pj_visiting_time / 2
 
 
 def measure(source, target):
