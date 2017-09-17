@@ -23,13 +23,13 @@ def read(fname):
     return open(pjoin(dirname(__file__), fname)).read()
 
 if version_info[0] >= 3:
-    install_requires = ["py3-ortools == 6.2.4388"]
+    install_requires = ["py3-ortools == 6.4.4495"]
 else:
-    install_requires = ["ortools == 6.2.4388"]
+    install_requires = ["ortools == 6.4.4495"]
 
 setup(
     name='ortools_examples',
-    version='6.2.4388',
+    version='6.4.4495',
     install_requires = ["haversine"].extend(install_requires),
     license='Apache 2.0',
     author = 'Google Inc',

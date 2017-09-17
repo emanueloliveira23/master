@@ -83,8 +83,8 @@ def main():
             # Solution cost.
             print("Total duration of all routes: " + str(assignment.ObjectiveValue()) + "\n")
 
-            for vehicle_nbr in range(num_days):
-                index = routing.Start(vehicle_nbr)
+            for day_nbr in range(num_days):
+                index = routing.Start(day_nbr)
                 index_next = assignment.Value(routing.NextVar(index))
 
                 route = ''
@@ -106,8 +106,8 @@ def main():
                 route += pois[node_index]["label"] + " -> " + pois[node_index_next]["label"]
                 route_duration += duration_callback(node_index, node_index_next)
 
-                print("Route for vehicle " + str(vehicle_nbr) + ":\n\n" + route + "\n")
-                print("Duration of route " + str(vehicle_nbr) + ": " + str(route_duration))
+                print("Route for day " + str(day_nbr) + ":\n\n" + route + "\n")
+                print("Duration of route " + str(day_nbr) + ": " + str(route_duration))
 
         else:
             print('No solution found.')
