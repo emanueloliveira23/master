@@ -7,6 +7,7 @@
 from ortools.constraint_solver import pywrapcp
 from ortools.constraint_solver import routing_enums_pb2
 from vrptur_pois_data_extractor import *
+import time
 
 
 class CreateMeasurementCallback(object):
@@ -32,11 +33,29 @@ class CreateMeasurementCallback(object):
 
 
 def main():
+
+    start = time.time()
+
     # Create the data.
     pois, measurement = create_data_array()
+
+    stop = time.time()
+
+    load_data_time = stop - start
+
+    print("\nLoad data time: %.2f ms\n" % (load_data_time * 1000))
+
+    print("Pois:")
+    for p in pois:
+        print("%s (%f,%f)" % (p["label"], p["coordinates"][1], p["coordinates"][0]))
+    print("\n")
+
+    start = time.time()
+
     num_pois = len(pois)
     depot = 0  # The depot is the start and end point of each route.
     num_days = 2
+
 
     # Create routing model.
     if num_pois > 0:
@@ -107,12 +126,20 @@ def main():
                 route_duration += duration_callback(node_index, node_index_next)
 
                 print("Route for day " + str(day_nbr) + ":\n\n" + route + "\n")
-                print("Duration of route " + str(day_nbr) + ": " + str(route_duration))
+                print("Duration of route " + str(day_nbr) + ": " + str(route_duration) + "\n")
 
         else:
             print('No solution found.')
     else:
         print('Specify an instance greater than 0.')
+
+    stop = time.time()
+
+    execution_time = stop - start
+
+    print("Execution time: %.2f ms" % (execution_time * 1000))
+
+    print("\nTotal time (load + execution): %.2f ms\n" % ((load_data_time + execution_time) * 1000))
 
 
 def create_data_array():
