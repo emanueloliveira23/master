@@ -10,10 +10,10 @@ WINDOWS_PYTHONPATH =
 
 # Set UNIX_PYTHON_VER to the version number of the Python installation on your computer that you wish to use with or-tools.
 #Example : UNIX_PYTHON_VER = 3.5 or UNIX_PYTHON_VER = 2.7
-UNIX_PYTHON_VER = 3.5
+UNIX_PYTHON_VER = 3.6
 
 # Set this variable to use it as PYTHONPATH.
-UNIX_PYTHONPATH = /usr/bin/python3.5
+UNIX_PYTHONPATH = /usr/bin/python3.6
 
 ##################################################################################
 

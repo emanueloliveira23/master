@@ -1,0 +1,423 @@
+Running vrptur.py
+PoIs:
+name (lat,lng)
+Jardim Japonês Jusako Fujita (-3.725121,-38.490693)
+Centro Dragão do Mar de Arte e Cultura (-3.721764,-38.519871)
+Mercado Central de Fortaleza (-3.723312,-38.524268)
+Praça do Ferreira (-3.727676,-38.527701)
+Theatro José de Alencar (-3.727612,-38.531585)
+Praça José de Alencar (-3.726756,-38.531284)
+Praça dos Mártires (Passeio Público) (-3.722662,-38.526669)
+Catedral Metropolitana de Fortaleza (-3.724497,-38.524417)
+Centro de Eventos do Ceará (-3.764464,-38.482372)
+Praça Portugal (-3.732826,-38.497801)
+Beira-Mar (-3.725578,-38.496995)
+Coco Bambu Frutos do Mar (-3.723426,-38.487393)
+
+
+Load data time: 1.39 ms
+
+
+[[hotel = Carmel Magna Praia Hotel, num_days = 2]]
+Computing time: 9.29 ms
+Duration: 618.00 min
+Distance: 626.22 km
+Trips:
+[Trip for day 0 ]
+Duration: 353.72 min
+Distance: 12.45 km
+Sequence: Carmel Magna Praia Hotel -> Praça Portugal -> Centro de Eventos do Ceará -> Jardim Japonês Jusako Fujita -> Coco Bambu Frutos do Mar -> Beira-Mar -> Carmel Magna Praia Hotel
+[Trip for day 1 ]
+Duration: 272.51 min
+Distance: 6.25 km
+Sequence: Carmel Magna Praia Hotel -> Catedral Metropolitana de Fortaleza -> Mercado Central de Fortaleza -> Praça do Ferreira -> Praça José de Alencar -> Theatro José de Alencar -> Praça dos Mártires (Passeio Público) -> Centro Dragão do Mar de Arte e Cultura -> Carmel Magna Praia Hotel
+
+[[hotel = Hotel Gran Marquise, num_days = 2]]
+Computing time: 6.00 ms
+Duration: 669.00 min
+Distance: 676.84 km
+Trips:
+[Trip for day 0 ]
+Duration: 198.18 min
+Distance: 2.65 km
+Sequence: Hotel Gran Marquise -> Coco Bambu Frutos do Mar -> Beira-Mar -> Jardim Japonês Jusako Fujita -> Hotel Gran Marquise
+[Trip for day 1 ]
+Duration: 478.66 min
+Distance: 18.73 km
+Sequence: Hotel Gran Marquise -> Centro de Eventos do Ceará -> Catedral Metropolitana de Fortaleza -> Praça José de Alencar -> Praça do Ferreira -> Theatro José de Alencar -> Praça dos Mártires (Passeio Público) -> Mercado Central de Fortaleza -> Centro Dragão do Mar de Arte e Cultura -> Praça Portugal -> Hotel Gran Marquise
+
+[[hotel = Crocobeach Hotel, num_days = 2]]
+Computing time: 3.87 ms
+Duration: 852.00 min
+Distance: 860.28 km
+Trips:
+[Trip for day 0 ]
+Duration: 419.89 min
+Distance: 20.29 km
+Sequence: Crocobeach Hotel -> Centro de Eventos do Ceará -> Praça do Ferreira -> Praça José de Alencar -> Theatro José de Alencar -> Praça dos Mártires (Passeio Público) -> Centro Dragão do Mar de Arte e Cultura -> Crocobeach Hotel
+[Trip for day 1 ]
+Duration: 440.39 min
+Distance: 16.64 km
+Sequence: Crocobeach Hotel -> Coco Bambu Frutos do Mar -> Beira-Mar -> Mercado Central de Fortaleza -> Catedral Metropolitana de Fortaleza -> Praça Portugal -> Jardim Japonês Jusako Fujita -> Crocobeach Hotel
+
+[[hotel = Gran Mareiro Hotel, num_days = 2]]
+Computing time: 3.36 ms
+Duration: 796.00 min
+Distance: 804.20 km
+Trips:
+[Trip for day 0 ]
+Duration: 480.21 min
+Distance: 20.98 km
+Sequence: Gran Mareiro Hotel -> Centro de Eventos do Ceará -> Catedral Metropolitana de Fortaleza -> Mercado Central de Fortaleza -> Praça do Ferreira -> Praça José de Alencar -> Theatro José de Alencar -> Praça dos Mártires (Passeio Público) -> Centro Dragão do Mar de Arte e Cultura -> Gran Mareiro Hotel
+[Trip for day 1 ]
+Duration: 323.99 min
+Distance: 11.60 km
+Sequence: Gran Mareiro Hotel -> Jardim Japonês Jusako Fujita -> Praça Portugal -> Beira-Mar -> Coco Bambu Frutos do Mar -> Gran Mareiro Hotel
+
+[[hotel = Hotel Sonata De Iracema, num_days = 2]]
+Computing time: 3.60 ms
+Duration: 633.00 min
+Distance: 640.06 km
+Trips:
+[Trip for day 0 ]
+Duration: 368.95 min
+Distance: 14.33 km
+Sequence: Hotel Sonata De Iracema -> Beira-Mar -> Jardim Japonês Jusako Fujita -> Coco Bambu Frutos do Mar -> Praça Portugal -> Centro de Eventos do Ceará -> Hotel Sonata De Iracema
+[Trip for day 1 ]
+Duration: 271.11 min
+Distance: 5.09 km
+Sequence: Hotel Sonata De Iracema -> Catedral Metropolitana de Fortaleza -> Mercado Central de Fortaleza -> Praça do Ferreira -> Praça José de Alencar -> Theatro José de Alencar -> Praça dos Mártires (Passeio Público) -> Centro Dragão do Mar de Arte e Cultura -> Hotel Sonata De Iracema
+
+[[hotel = Carmel Magna Praia Hotel, num_days = 3]]
+Computing time: 3.84 ms
+Duration: 618.00 min
+Distance: 626.22 km
+Trips:
+[Trip for day 0 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Carmel Magna Praia Hotel -> Carmel Magna Praia Hotel
+[Trip for day 1 ]
+Duration: 353.72 min
+Distance: 12.45 km
+Sequence: Carmel Magna Praia Hotel -> Praça Portugal -> Centro de Eventos do Ceará -> Jardim Japonês Jusako Fujita -> Coco Bambu Frutos do Mar -> Beira-Mar -> Carmel Magna Praia Hotel
+[Trip for day 2 ]
+Duration: 272.51 min
+Distance: 6.25 km
+Sequence: Carmel Magna Praia Hotel -> Catedral Metropolitana de Fortaleza -> Mercado Central de Fortaleza -> Praça do Ferreira -> Praça José de Alencar -> Theatro José de Alencar -> Praça dos Mártires (Passeio Público) -> Centro Dragão do Mar de Arte e Cultura -> Carmel Magna Praia Hotel
+
+[[hotel = Hotel Gran Marquise, num_days = 3]]
+Computing time: 5.97 ms
+Duration: 669.00 min
+Distance: 676.84 km
+Trips:
+[Trip for day 0 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Hotel Gran Marquise -> Hotel Gran Marquise
+[Trip for day 1 ]
+Duration: 198.18 min
+Distance: 2.65 km
+Sequence: Hotel Gran Marquise -> Coco Bambu Frutos do Mar -> Beira-Mar -> Jardim Japonês Jusako Fujita -> Hotel Gran Marquise
+[Trip for day 2 ]
+Duration: 478.66 min
+Distance: 18.73 km
+Sequence: Hotel Gran Marquise -> Centro de Eventos do Ceará -> Catedral Metropolitana de Fortaleza -> Praça José de Alencar -> Praça do Ferreira -> Theatro José de Alencar -> Praça dos Mártires (Passeio Público) -> Mercado Central de Fortaleza -> Centro Dragão do Mar de Arte e Cultura -> Praça Portugal -> Hotel Gran Marquise
+
+[[hotel = Crocobeach Hotel, num_days = 3]]
+Computing time: 4.06 ms
+Duration: 852.00 min
+Distance: 860.28 km
+Trips:
+[Trip for day 0 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Crocobeach Hotel -> Crocobeach Hotel
+[Trip for day 1 ]
+Duration: 419.89 min
+Distance: 20.29 km
+Sequence: Crocobeach Hotel -> Centro de Eventos do Ceará -> Praça do Ferreira -> Praça José de Alencar -> Theatro José de Alencar -> Praça dos Mártires (Passeio Público) -> Centro Dragão do Mar de Arte e Cultura -> Crocobeach Hotel
+[Trip for day 2 ]
+Duration: 440.39 min
+Distance: 16.64 km
+Sequence: Crocobeach Hotel -> Coco Bambu Frutos do Mar -> Beira-Mar -> Mercado Central de Fortaleza -> Catedral Metropolitana de Fortaleza -> Praça Portugal -> Jardim Japonês Jusako Fujita -> Crocobeach Hotel
+
+[[hotel = Gran Mareiro Hotel, num_days = 3]]
+Computing time: 3.58 ms
+Duration: 796.00 min
+Distance: 804.20 km
+Trips:
+[Trip for day 0 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Gran Mareiro Hotel -> Gran Mareiro Hotel
+[Trip for day 1 ]
+Duration: 480.21 min
+Distance: 20.98 km
+Sequence: Gran Mareiro Hotel -> Centro de Eventos do Ceará -> Catedral Metropolitana de Fortaleza -> Mercado Central de Fortaleza -> Praça do Ferreira -> Praça José de Alencar -> Theatro José de Alencar -> Praça dos Mártires (Passeio Público) -> Centro Dragão do Mar de Arte e Cultura -> Gran Mareiro Hotel
+[Trip for day 2 ]
+Duration: 323.99 min
+Distance: 11.60 km
+Sequence: Gran Mareiro Hotel -> Jardim Japonês Jusako Fujita -> Praça Portugal -> Beira-Mar -> Coco Bambu Frutos do Mar -> Gran Mareiro Hotel
+
+[[hotel = Hotel Sonata De Iracema, num_days = 3]]
+Computing time: 3.84 ms
+Duration: 633.00 min
+Distance: 640.06 km
+Trips:
+[Trip for day 0 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Hotel Sonata De Iracema -> Hotel Sonata De Iracema
+[Trip for day 1 ]
+Duration: 368.95 min
+Distance: 14.33 km
+Sequence: Hotel Sonata De Iracema -> Beira-Mar -> Jardim Japonês Jusako Fujita -> Coco Bambu Frutos do Mar -> Praça Portugal -> Centro de Eventos do Ceará -> Hotel Sonata De Iracema
+[Trip for day 2 ]
+Duration: 271.11 min
+Distance: 5.09 km
+Sequence: Hotel Sonata De Iracema -> Catedral Metropolitana de Fortaleza -> Mercado Central de Fortaleza -> Praça do Ferreira -> Praça José de Alencar -> Theatro José de Alencar -> Praça dos Mártires (Passeio Público) -> Centro Dragão do Mar de Arte e Cultura -> Hotel Sonata De Iracema
+
+[[hotel = Carmel Magna Praia Hotel, num_days = 4]]
+Computing time: 4.05 ms
+Duration: 618.00 min
+Distance: 626.22 km
+Trips:
+[Trip for day 0 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Carmel Magna Praia Hotel -> Carmel Magna Praia Hotel
+[Trip for day 1 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Carmel Magna Praia Hotel -> Carmel Magna Praia Hotel
+[Trip for day 2 ]
+Duration: 353.72 min
+Distance: 12.45 km
+Sequence: Carmel Magna Praia Hotel -> Praça Portugal -> Centro de Eventos do Ceará -> Jardim Japonês Jusako Fujita -> Coco Bambu Frutos do Mar -> Beira-Mar -> Carmel Magna Praia Hotel
+[Trip for day 3 ]
+Duration: 272.51 min
+Distance: 6.25 km
+Sequence: Carmel Magna Praia Hotel -> Catedral Metropolitana de Fortaleza -> Mercado Central de Fortaleza -> Praça do Ferreira -> Praça José de Alencar -> Theatro José de Alencar -> Praça dos Mártires (Passeio Público) -> Centro Dragão do Mar de Arte e Cultura -> Carmel Magna Praia Hotel
+
+[[hotel = Hotel Gran Marquise, num_days = 4]]
+Computing time: 7.15 ms
+Duration: 669.00 min
+Distance: 676.84 km
+Trips:
+[Trip for day 0 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Hotel Gran Marquise -> Hotel Gran Marquise
+[Trip for day 1 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Hotel Gran Marquise -> Hotel Gran Marquise
+[Trip for day 2 ]
+Duration: 198.18 min
+Distance: 2.65 km
+Sequence: Hotel Gran Marquise -> Coco Bambu Frutos do Mar -> Beira-Mar -> Jardim Japonês Jusako Fujita -> Hotel Gran Marquise
+[Trip for day 3 ]
+Duration: 478.66 min
+Distance: 18.73 km
+Sequence: Hotel Gran Marquise -> Centro de Eventos do Ceará -> Catedral Metropolitana de Fortaleza -> Praça José de Alencar -> Praça do Ferreira -> Theatro José de Alencar -> Praça dos Mártires (Passeio Público) -> Mercado Central de Fortaleza -> Centro Dragão do Mar de Arte e Cultura -> Praça Portugal -> Hotel Gran Marquise
+
+[[hotel = Crocobeach Hotel, num_days = 4]]
+Computing time: 5.05 ms
+Duration: 852.00 min
+Distance: 860.28 km
+Trips:
+[Trip for day 0 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Crocobeach Hotel -> Crocobeach Hotel
+[Trip for day 1 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Crocobeach Hotel -> Crocobeach Hotel
+[Trip for day 2 ]
+Duration: 419.89 min
+Distance: 20.29 km
+Sequence: Crocobeach Hotel -> Centro de Eventos do Ceará -> Praça do Ferreira -> Praça José de Alencar -> Theatro José de Alencar -> Praça dos Mártires (Passeio Público) -> Centro Dragão do Mar de Arte e Cultura -> Crocobeach Hotel
+[Trip for day 3 ]
+Duration: 440.39 min
+Distance: 16.64 km
+Sequence: Crocobeach Hotel -> Coco Bambu Frutos do Mar -> Beira-Mar -> Mercado Central de Fortaleza -> Catedral Metropolitana de Fortaleza -> Praça Portugal -> Jardim Japonês Jusako Fujita -> Crocobeach Hotel
+
+[[hotel = Gran Mareiro Hotel, num_days = 4]]
+Computing time: 3.79 ms
+Duration: 796.00 min
+Distance: 804.20 km
+Trips:
+[Trip for day 0 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Gran Mareiro Hotel -> Gran Mareiro Hotel
+[Trip for day 1 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Gran Mareiro Hotel -> Gran Mareiro Hotel
+[Trip for day 2 ]
+Duration: 480.21 min
+Distance: 20.98 km
+Sequence: Gran Mareiro Hotel -> Centro de Eventos do Ceará -> Catedral Metropolitana de Fortaleza -> Mercado Central de Fortaleza -> Praça do Ferreira -> Praça José de Alencar -> Theatro José de Alencar -> Praça dos Mártires (Passeio Público) -> Centro Dragão do Mar de Arte e Cultura -> Gran Mareiro Hotel
+[Trip for day 3 ]
+Duration: 323.99 min
+Distance: 11.60 km
+Sequence: Gran Mareiro Hotel -> Jardim Japonês Jusako Fujita -> Praça Portugal -> Beira-Mar -> Coco Bambu Frutos do Mar -> Gran Mareiro Hotel
+
+[[hotel = Hotel Sonata De Iracema, num_days = 4]]
+Computing time: 3.97 ms
+Duration: 633.00 min
+Distance: 640.06 km
+Trips:
+[Trip for day 0 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Hotel Sonata De Iracema -> Hotel Sonata De Iracema
+[Trip for day 1 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Hotel Sonata De Iracema -> Hotel Sonata De Iracema
+[Trip for day 2 ]
+Duration: 368.95 min
+Distance: 14.33 km
+Sequence: Hotel Sonata De Iracema -> Beira-Mar -> Jardim Japonês Jusako Fujita -> Coco Bambu Frutos do Mar -> Praça Portugal -> Centro de Eventos do Ceará -> Hotel Sonata De Iracema
+[Trip for day 3 ]
+Duration: 271.11 min
+Distance: 5.09 km
+Sequence: Hotel Sonata De Iracema -> Catedral Metropolitana de Fortaleza -> Mercado Central de Fortaleza -> Praça do Ferreira -> Praça José de Alencar -> Theatro José de Alencar -> Praça dos Mártires (Passeio Público) -> Centro Dragão do Mar de Arte e Cultura -> Hotel Sonata De Iracema
+
+[[hotel = Carmel Magna Praia Hotel, num_days = 5]]
+Computing time: 4.14 ms
+Duration: 618.00 min
+Distance: 626.22 km
+Trips:
+[Trip for day 0 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Carmel Magna Praia Hotel -> Carmel Magna Praia Hotel
+[Trip for day 1 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Carmel Magna Praia Hotel -> Carmel Magna Praia Hotel
+[Trip for day 2 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Carmel Magna Praia Hotel -> Carmel Magna Praia Hotel
+[Trip for day 3 ]
+Duration: 353.72 min
+Distance: 12.45 km
+Sequence: Carmel Magna Praia Hotel -> Praça Portugal -> Centro de Eventos do Ceará -> Jardim Japonês Jusako Fujita -> Coco Bambu Frutos do Mar -> Beira-Mar -> Carmel Magna Praia Hotel
+[Trip for day 4 ]
+Duration: 272.51 min
+Distance: 6.25 km
+Sequence: Carmel Magna Praia Hotel -> Catedral Metropolitana de Fortaleza -> Mercado Central de Fortaleza -> Praça do Ferreira -> Praça José de Alencar -> Theatro José de Alencar -> Praça dos Mártires (Passeio Público) -> Centro Dragão do Mar de Arte e Cultura -> Carmel Magna Praia Hotel
+
+[[hotel = Hotel Gran Marquise, num_days = 5]]
+Computing time: 6.32 ms
+Duration: 669.00 min
+Distance: 676.84 km
+Trips:
+[Trip for day 0 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Hotel Gran Marquise -> Hotel Gran Marquise
+[Trip for day 1 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Hotel Gran Marquise -> Hotel Gran Marquise
+[Trip for day 2 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Hotel Gran Marquise -> Hotel Gran Marquise
+[Trip for day 3 ]
+Duration: 198.18 min
+Distance: 2.65 km
+Sequence: Hotel Gran Marquise -> Coco Bambu Frutos do Mar -> Beira-Mar -> Jardim Japonês Jusako Fujita -> Hotel Gran Marquise
+[Trip for day 4 ]
+Duration: 478.66 min
+Distance: 18.73 km
+Sequence: Hotel Gran Marquise -> Centro de Eventos do Ceará -> Catedral Metropolitana de Fortaleza -> Praça José de Alencar -> Praça do Ferreira -> Theatro José de Alencar -> Praça dos Mártires (Passeio Público) -> Mercado Central de Fortaleza -> Centro Dragão do Mar de Arte e Cultura -> Praça Portugal -> Hotel Gran Marquise
+
+[[hotel = Crocobeach Hotel, num_days = 5]]
+Computing time: 4.62 ms
+Duration: 852.00 min
+Distance: 860.28 km
+Trips:
+[Trip for day 0 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Crocobeach Hotel -> Crocobeach Hotel
+[Trip for day 1 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Crocobeach Hotel -> Crocobeach Hotel
+[Trip for day 2 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Crocobeach Hotel -> Crocobeach Hotel
+[Trip for day 3 ]
+Duration: 419.89 min
+Distance: 20.29 km
+Sequence: Crocobeach Hotel -> Centro de Eventos do Ceará -> Praça do Ferreira -> Praça José de Alencar -> Theatro José de Alencar -> Praça dos Mártires (Passeio Público) -> Centro Dragão do Mar de Arte e Cultura -> Crocobeach Hotel
+[Trip for day 4 ]
+Duration: 440.39 min
+Distance: 16.64 km
+Sequence: Crocobeach Hotel -> Coco Bambu Frutos do Mar -> Beira-Mar -> Mercado Central de Fortaleza -> Catedral Metropolitana de Fortaleza -> Praça Portugal -> Jardim Japonês Jusako Fujita -> Crocobeach Hotel
+
+[[hotel = Gran Mareiro Hotel, num_days = 5]]
+Computing time: 3.86 ms
+Duration: 796.00 min
+Distance: 804.20 km
+Trips:
+[Trip for day 0 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Gran Mareiro Hotel -> Gran Mareiro Hotel
+[Trip for day 1 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Gran Mareiro Hotel -> Gran Mareiro Hotel
+[Trip for day 2 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Gran Mareiro Hotel -> Gran Mareiro Hotel
+[Trip for day 3 ]
+Duration: 480.21 min
+Distance: 20.98 km
+Sequence: Gran Mareiro Hotel -> Centro de Eventos do Ceará -> Catedral Metropolitana de Fortaleza -> Mercado Central de Fortaleza -> Praça do Ferreira -> Praça José de Alencar -> Theatro José de Alencar -> Praça dos Mártires (Passeio Público) -> Centro Dragão do Mar de Arte e Cultura -> Gran Mareiro Hotel
+[Trip for day 4 ]
+Duration: 323.99 min
+Distance: 11.60 km
+Sequence: Gran Mareiro Hotel -> Jardim Japonês Jusako Fujita -> Praça Portugal -> Beira-Mar -> Coco Bambu Frutos do Mar -> Gran Mareiro Hotel
+
+[[hotel = Hotel Sonata De Iracema, num_days = 5]]
+Computing time: 4.21 ms
+Duration: 633.00 min
+Distance: 640.06 km
+Trips:
+[Trip for day 0 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Hotel Sonata De Iracema -> Hotel Sonata De Iracema
+[Trip for day 1 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Hotel Sonata De Iracema -> Hotel Sonata De Iracema
+[Trip for day 2 ]
+Duration: 0.00 min
+Distance: 0.00 km
+Sequence: Hotel Sonata De Iracema -> Hotel Sonata De Iracema
+[Trip for day 3 ]
+Duration: 368.95 min
+Distance: 14.33 km
+Sequence: Hotel Sonata De Iracema -> Beira-Mar -> Jardim Japonês Jusako Fujita -> Coco Bambu Frutos do Mar -> Praça Portugal -> Centro de Eventos do Ceará -> Hotel Sonata De Iracema
+[Trip for day 4 ]
+Duration: 271.11 min
+Distance: 5.09 km
+Sequence: Hotel Sonata De Iracema -> Catedral Metropolitana de Fortaleza -> Mercado Central de Fortaleza -> Praça do Ferreira -> Praça José de Alencar -> Theatro José de Alencar -> Praça dos Mártires (Passeio Público) -> Centro Dragão do Mar de Arte e Cultura -> Hotel Sonata De Iracema
+Execution time: 97.50 ms
+
+Total time (load + execution): 98.91 ms
+

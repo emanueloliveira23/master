@@ -99,22 +99,30 @@ def manhattan_distance(pi_lng, pi_lat, pj_lng, pj_lat):
     return lat_d + lon_d
 
 
-def distance(pi, pj):
+def distance(pi, pj, smart=False, default_distance=haversine_distance):
     """
-    Compute the distance between two PoIs
-    If the two PoIs are in same avenue, the Euclidean-haversine distance is used.
-    If the two PoIs aren't in the same avenue, the Manhattan-haversine distance is used.
+    Compute the distance between two PoIs.
+    If smart is on, the distance is measured base on the follow scenarios:
+        - If the two PoIs are in same avenue, the Euclidean-haversine distance is used.
+        - If the two PoIs aren't in the same avenue, the Manhattan-haversine distance is used.
     :param pi: A poi of interest with "coordinates" attribute.
     :param pj: A poi of interest with "coordinates" attribute.
+    :param smart: Flag that turn on the detection of best fit distance measure.
+    :param default_distance: Distance measure used if smart is off.
     :return: The distance in kilometers between two points of interests (PoI).
     """
+
     pi_lng, pi_lat = pi["coordinates"]
     pj_lng, pj_lat = pj["coordinates"]
 
-    if in_same_avenue(pi, pj):
-        d = haversine_distance(pi_lng, pi_lat, pj_lng, pj_lat)
+    if smart:
+        if in_same_avenue(pi, pj):
+            d = haversine_distance(pi_lng, pi_lat, pj_lng, pj_lat)
+        else:
+            d = manhattan_distance(pi_lng, pi_lat, pj_lng, pj_lat)
     else:
-        d = manhattan_distance(pi_lng, pi_lat, pj_lng, pj_lat)
+        d = default_distance(pi_lng, pi_lat, pj_lng, pj_lat)
+
     return d
 
 
@@ -128,6 +136,7 @@ def duration(pi, pj, mode="auto", auto_threshold=MAX_WALK_DISTANCE, max_urban_th
     :param max_urban_threshold: If mode === "auto", this threshold is used to decide if mode is car or car in highway.
     :return: The travel duration between pi to pj using such transport mode.
     """
+
     dist = distance(pi, pj)
 
     if dist == 0:

@@ -1,0 +1,6 @@
+[] Definir medida/função de comparação.
+[] Definir função que adapta um postcard do wanderpaths para as mesmas medidas que usamos nos roteiros gerados pelo VRPTur.
+[] Variar dias de 1 a 10
+[] Variar hoteis: selecionar 5 hoteis importantes da cidade
+[] Salvar, no ambiente de teste do wanderpaths, tuplas no formato <cidade, postcard> quando usuários da plataforma criarem postcards no modo popular.
+[] Rodar dados de testes para vários dias e comparar com postcards do wanderpaths.
